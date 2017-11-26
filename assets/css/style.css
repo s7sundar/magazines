@@ -1,0 +1,99 @@
+
+.sattam-bg {
+	background-color: #005EAD;
+	min-height: 900px;
+}
+
+.sattam-bg-color {
+	background-color: #005EAD;
+}
+
+.body-bg {
+	background-color: #EEE;
+	min-height: 900px;
+}
+
+
+.no-pad {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.pad-top {
+	padding-top: 10px;
+}
+
+.sattam-ul {
+	list-style: none;
+	padding-left: 0px;
+	margin-left: 0px;
+	color: #FFF !important;
+}
+.sattam-li {
+	padding: 8px 0px;
+	border-bottom: 1px dotted #80ced6;
+	color: #FFF !important;
+}
+
+.link-style {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.white-bg {
+	background-color: #FFF;
+}
+
+.sattam-border-2px {
+	border-top: 1px solid #eee;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+
+.top-pad-login{
+	padding-top: 150px;
+}
+
+.error{
+	color: red;
+	font-weight: normal;
+}
+
+.logo-color{
+	color:#7e3f9d;
+}
+
+.top-pad{
+	padding-top: 35px;
+}
+
+.left-menu{
+	background-color: #FCFCFC;
+	min-height: 600px;
+	height: calc(100%);
+}
+
+.border-menu-color{
+	border-bottom:1px solid #ef3939;
+}
+
+.black{
+	color: #000 !important;
+}
+
+.white {
+	color: #FFF !important;
+}
+
+.loginbody {
+	background-color: #FCFCFC;
+}
+
+.bg-dialog-500 {
+	width: 500px;
+}
+
+.bg-dialog-750 {
+	width: 750px;
+}
