@@ -58,22 +58,24 @@ class Admin extends CI_Controller
 
     private function upload_cover($date)
     {
-      $file_path = FCPATH.'/magazines/covers/'.$date;
+      $file_path = FCPATH.'magazines/covers/'.$date;
       if(!is_dir($file_path)) {
-        mkdir($file_path);
+        mkdir($file_path, 0777, TRUE);
       }
+
       $data = array('status'=>false, 'msg'=>'', 'file_path'=>'');
       $config['upload_path']          = $file_path;
       $config['allowed_types']        = 'gif|jpg|jpeg|png';
       $config['max_width']            = 245;
       $config['max_height']           = 205;
-      $this->load->library('upload', $config);
+      $this->upload->initialize($config);
       if (!$this->upload->do_upload('mag_tamil_cover')) {
           $data['msg'] = $this->upload->display_errors();
       } else {
           $data['status'] = true;
           $data['file_path'] = $this->upload->data('full_path');
       }
+
       return $data;
     }
 
