@@ -37,23 +37,31 @@ class Admin extends CI_Controller
       $params = $this->input->post(null, true);
       $cover = $this->upload_cover($params['mag_date']);
       if(!$cover['status']) {
-        $this->add($cover);
-        exit(0);
+        $this->add($cover);        
       }
-      $files['mag_tamil_cover'] = $cover['file_path'];
-      $files['mag_file_path'] = $params['mag_file_path'];
-      if(isset($_FILES['mag_file']) &&
-        isset($_FILES['mag_file']['name']) &&
-          !empty($_FILES['mag_file']['name'])) {
-        $mag_file = $this->upload_file($params['mag_date']);
-        if(!$mag_file['status']) {
-          $this->add($mag_file);
-          exit(0);
+      else {
+        $files['mag_tamil_cover'] = $cover['file_path'];
+        $files['mag_file_path'] = $params['mag_file_path'];
+        if(isset($_FILES['mag_file']) &&
+          isset($_FILES['mag_file']['name']) &&
+            !empty($_FILES['mag_file']['name'])) {
+            $mag_file = $this->upload_file($params['mag_date']);
+            if(!$mag_file['status']) {
+              $this->add($mag_file);              
+            }
+            else {
+              $files['mag_file_path'] = $mag_file['file_path'];
+              $data = $this->admin->save($params, $files);
+              $this->add($data);
+            }          
         }
-        $files['mag_file_path'] = $mag_file['file_path'];
+        else {
+          $data = $this->admin->save($params, $files);
+          $this->add($data);
+        }
+        
       }
-      $data = $this->admin->save($params, $files);
-      $this->add($data);
+      
     }
 
     private function upload_cover($date)
@@ -74,8 +82,7 @@ class Admin extends CI_Controller
       } else {
           $data['status'] = true;
           $data['file_path'] = $this->upload->data('full_path');
-      }
-
+      }      
       return $data;
     }
 
