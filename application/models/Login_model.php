@@ -15,7 +15,7 @@ class Login_model extends CI_Model
        $sql='SELECT * FROM user_login WHERE email=?
        AND password=? AND user_role="Admin"';
        $result =$this->db->query($sql,array(
-            $params['email'],$params['password']
+            $params['email'],md5($params['password'])
        ));
 
        if($result->num_rows()>0) {

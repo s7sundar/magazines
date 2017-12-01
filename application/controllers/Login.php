@@ -11,6 +11,9 @@ class Login extends CI_Controller
 
 	public function index($data = array())
     {
+    	//echo md5('trofeo'); 0088d7c2d68eaf9d33da24e4c2bd2b70
+    	//exit(0);
+
 		$user_id=$this->session->userdata('user_id');
 		if(empty($user_id)){
 			$this->load->view('login/index',$data);

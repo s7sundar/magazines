@@ -1,7 +1,7 @@
 <?php
 
-$config['company_name'] = 'TROFEO SOLUTIONS';
-$config['project_name'] = 'SATTAM ORG';
+$config['company_name'] = 'SPI MAGAZINE';
+$config['project_name'] = 'SPI MAGAZINE';
 $config['version'] = '1.0';
 $config['disable_compress'] = true;
 
