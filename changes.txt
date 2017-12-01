@@ -1,0 +1,10 @@
+01-12-2017
+----------
+
+Take the latest code and configure the URL application/config/config.php Line No 26 $config['base_url'] value in case if you deploy this on server
+
+Please use this below query to reset your passwords
+UPDATE `user_login` SET `password` = '0088d7c2d68eaf9d33da24e4c2bd2b70' WHERE `user_id` = '91999';
+
+Use this function to generate password hash
+https://www.w3schools.com/php/func_string_md5.asp
